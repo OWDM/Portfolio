@@ -1,24 +1,29 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const currentLang = getLangFromUrl(Astro.url);
+const isRTL = currentLang === 'ar';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLang} dir={isRTL ? 'rtl' : 'ltr'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Software Developer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta property="og:title" content="Oscar Hernandez" />
-    <meta property="og:description" content="Software Developer" />
-    <meta property="og:image" content="https://oscarhernandez.vercel.app/og.image.png" />
-    <meta property="og:url" content="https://oscarhernandez.vercel.app" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <meta property="og:title" content="Your Name - Portfolio" />
+    <meta property="og:description" content="Software Developer Portfolio" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Oscar Hernandez Portfolio" />
+    <meta property="og:site_name" content="Portfolio" />
 
     <title>{title}</title>
   </head>
@@ -78,5 +83,40 @@ const { title } = Astro.props;
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--line) var(--container);
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
+
+  /* RTL spacing utilities */
+  [dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  /* Add Arabic font support */
+  [lang="ar"] {
+    font-family:
+      "Cairo",
+      "Noto Sans Arabic",
+      "Montserrat",
+      -apple-system,
+      system-ui,
+      sans-serif;
+  }
+
+  /* Better text rendering for Arabic */
+  [lang="ar"] * {
+    font-feature-settings: normal;
+    text-rendering: optimizeLegibility;
   }
 </style>
