@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "projects": "المشاريع",
+    "contact": "تواصل معي"
+  },
+  "home": {
+    "greeting": "مرحباً، أنا مساعد",
+    "title": "مهندس ذكاء\nاصطناعي",
+    "description": "تحويل الأفكار إلى حلول ذكية ومبتكرة باستخدام أحدث تقنيات الذكاء الاصطناعي",
+    "frontend": "",
+    "development": ""
+  },
+  "projects": {
+    "title": "المشاريع",
+    "subtitle": "أعمالي",
+    "status": {
+      "deployed": "منشور",
+      "development": "قيد التطوير",
+      "contributor": "مساهم"
+    },
+    "moreProjects": "المزيد من المشاريع على"
+  },
+  "contact": {
+    "title": "تواصل معي",
+    "subtitle": "لنتحدث",
+    "description": "هل لديك سؤال أو مشروع في ذهنك؟ لا تتردد في التواصل.",
+    "location": "الموقع:",
+    "locationValue": "موقعك",
+    "form": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "message": "الرسالة",
+      "submit": "إرسال",
+      "successMessage": "✅ شكراً لك على رسالتك!"
+    }
+  },
+  "footer": {
+    "copyright": "جميع الحقوق محفوظة © 2025",
+    "yourName": "مساعد",
+    "allRights": "القالب الأصلي من",
+    "originalAuthor": "أوسكار هيرنانديز"
+  }
+}
