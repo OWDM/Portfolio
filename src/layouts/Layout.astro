@@ -20,7 +20,7 @@ const isRTL = currentLang === 'ar';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <meta property="og:title" content="Your Name - Portfolio" />
     <meta property="og:description" content="Software Developer Portfolio" />
     <meta property="og:type" content="website" />
@@ -44,7 +44,7 @@ const isRTL = currentLang === 'ar';
 
   * {
     font-family:
-      "Syne",
+      "DM Sans",
       -apple-system,
       system-ui,
       sans-serif;
@@ -107,7 +107,7 @@ const isRTL = currentLang === 'ar';
     font-family:
       "Cairo",
       "Noto Sans Arabic",
-      "Syne",
+      "DM Sans",
       -apple-system,
       system-ui,
       sans-serif;
@@ -117,5 +117,15 @@ const isRTL = currentLang === 'ar';
   [lang="ar"] * {
     font-feature-settings: normal;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Typography utility classes */
+  .display-text {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+  }
+
+  .mono-text {
+    font-family: "JetBrains Mono", "Courier New", monospace;
   }
 </style>
