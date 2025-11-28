@@ -12,20 +12,17 @@ const isRTL = lang === 'ar';
       {/* For RTL: Structure is Description on left, Greeting/Title/Icons stacked vertically on right */}
       {/* For LTR: Structure is Greeting on top, then Title/Description side by side, then Icons */}
       {isRTL ? (
-        <div class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 md:gap-8">
-          {/* Description on LEFT */}
-          <p class="text-md md:text-2xl text-[var(--white-icon)] lg:order-2 text-right" dir="rtl" style="direction: rtl; text-align: right;">
+        <>
+          <p class="mono-text text-sm md:text-base text-[var(--white-icon)] tracking-wide text-right">
+            <span class="text-[var(--sec)]">~/</span> {t('home.greeting')}
+          </p>
+          <h1 class="display-text text-[var(--white)] text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-right">
+            {t('home.title')}
+          </h1>
+          <p class="text-lg md:text-2xl text-[var(--white-icon)] max-w-3xl leading-relaxed text-right" dir="rtl">
             {t('home.description')}
           </p>
-          {/* Greeting, Title and Icons stacked vertically on RIGHT */}
-          <div class="space-y-4 lg:order-1 flex-shrink-0">
-            <p class="text-md md:text-lg text-[var(--white-icon)] shiny-white text-left">
-              {t('home.greeting')}
-            </p>
-            <h1 class="text-[var(--white)] text-4xl md:text-5xl lg:text-6xl font-medium whitespace-pre-line leading-tight text-left">
-              {t('home.title')}
-            </h1>
-            <div class="flex gap-2 pt-3 md:pt-6">
+          <div class="flex gap-2 pt-3 md:pt-6 justify-end">
               <a
                 target="_blank"
                 href="https://github.com/yourusername"
@@ -57,29 +54,26 @@ const isRTL = lang === 'ar';
                 </svg>
               </a>
             </div>
-          </div>
-        </div>
+        </>
       ) : (
         <>
-          <p class="text-md md:text-lg text-[var(--white-icon)] shiny-white font-mono tracking-wide">
-            <span class="text-[var(--sec)]">~/portfolio$</span> {t('home.greeting')}
+          <p class="mono-text text-sm md:text-base text-[var(--white-icon)] tracking-wide">
+            <span class="text-[var(--sec)]">~/</span> {t('home.greeting')}
           </p>
-          <div class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4">
-            <h1 class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none">
-              {t('home.title')}
-            </h1>
-            <p class="text-md md:text-2xl text-[var(--white-icon)]">
-              {t('home.description')}
-              {t('home.frontend') && (
-                <>
-                  {' '}
-                  <span class="text-[var(--sec)] shiny-sec">{t('home.frontend')}</span>
-                  {' '}
-                  {t('home.development')}
-                </>
-              )}
-            </p>
-          </div>
+          <h1 class="display-text text-[var(--white)] text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
+            {t('home.title')}
+          </h1>
+          <p class="text-lg md:text-2xl text-[var(--white-icon)] max-w-3xl leading-relaxed">
+            {t('home.description')}
+            {t('home.frontend') && (
+              <>
+                {' '}
+                <span class="text-[var(--sec)] shiny-sec">{t('home.frontend')}</span>
+                {' '}
+                {t('home.development')}
+              </>
+            )}
+          </p>
           <div class="flex gap-2 pt-3 md:pt-6 justify-start">
             <a
               target="_blank"
